@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzler</title>
+    <link href="https://fonts.cdnfonts.com/css/gladly-accept" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='/styles/index.css') }}" />
+    <script src="{{ url_for('static',filename='src/index.js') }}" defer></script>
+</head>
+<body>
+    <div class="mainContainer">
+        <h1>Quizz++</h1>
+        <h2>Um jogo de perguntas</h2>
+    </div>
+    <div class="mainContainer buttonContainer">
+        <button class="disc-btn">Matemática</button>
+        <button class="disc-btn">Geografia</button>
+        <button class="disc-btn">História</button>
+        <button class="disc-btn">Ciências</button>
+        <button class="disc-btn">Biologia</button>
+        <button class="disc-btn">Física</button>
+        <button class="disc-btn">Astronomia</button>
+        <button class="disc-btn">Tecnologia</button>
+    </div>
+    <div>
+        <p>Pontos acumulados</p>
+        <p class="pointsText">0</p>
+        <button class="reset-btn">Resetar pontuação</button>
+    </div>
+</body>
+</html>
