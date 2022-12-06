@@ -24,7 +24,7 @@ function update(){
 update();
 
 function random(){
-    return  Math.floor(Math.random() * (999 - -999) ) + -999;
+    return  Math.floor(Math.random() * (999 - 0) ) + 1;
 }
 
 function createCount(num1, num2){
@@ -59,19 +59,18 @@ function conta(){
     var num2 = random()
     resultado = createCount(num1,num2);
     labelCalc.textContent=(`${num1} ${signal} ${num2}`);
-    console.log(resultado)
 }
 answerBtn.addEventListener("click", function () {
     if (answerInpt.value == resultado){
         pontosMath++;
         localStorage.setItem('math',pontosMath);
-        console.log("boa");
         notifier.style.top="40vh";
-       
-        
+        notifier.textContent="Você acertou!"
+        notifier.style.backgroundColor="#008000";
     }else{
-        console.log("deu ruim")
-        
+        notifier.style.top="40vh";
+        notifier.textContent=`Você errou!\n O resultado é ${resultado}`
+        notifier.style.backgroundColor="#ad2828";
     }
     answerInpt.value=0;
     update();

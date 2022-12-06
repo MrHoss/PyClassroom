@@ -12,13 +12,13 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url("https://pixabay.com/get/geb6d4eb1642f8441935598786121268013be939f6509a63b87f6420bff0368b4f3714da1adf5799d5b4966cb2409c7a97921d7ea96f4d55da02ddfca8df38e0ce10be455e96fd2709bfd7bdfdcd0a513_1920.png");
+    background-image: url('/static/assets/background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .fullContainer{
-    background-color: rgba(255, 166, 0, 0.699);
+    background-color: rgba(255, 164, 79, 0.699);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 30px;
     padding: 30px;
@@ -92,7 +92,7 @@ body{
 }
 .reset-btn:hover{
     font-size: 1rem;
-    background-color: rgb(173, 40, 40);
+    background-color: #ad2828;
     cursor: pointer;
 }
 .input-quizz{
@@ -107,7 +107,7 @@ body{
     font-size: 1.8rem;
 }
 .notifier{
-    background-color: green;
+    background-color: #008000;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 10px;
     padding: 10px;
