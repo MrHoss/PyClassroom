@@ -1,4 +1,25 @@
 {% extends 'components/headquizzpp.html' %}
 {% block content %}
-{{title}}
+<div class="fullContainer">
+<h2 style="font-weight:400;">Matemática</h2>
+<div class="mainContainer">
+    <h1>Quizz++</h1>
+
+</div>
+<div class="mainContainer resContainer">
+    <h2>Quanto é <span id="calc">calculo</span>?</h2>
+    
+    <input class="input-quizz" type="number" value=0>
+    <button class="res-btn">RESPONDER</button>
+</div>
+<div style="margin-top:70px;">
+    <div class="notifier"><h3>Você acertou!!</h3></div>
+    <p>Pontos em matemática</p>
+    <p id="thisPointsText">0</p>
+    <p>Pontos acumulados</p>
+    <p id="pointsText">0</p>
+    <button class="reset-btn">Resetar pontuação</button>
+</div>
+</div>
+<script src="{{ url_for('static',filename='src/games/quizzpp/math.js') }}"></script>
 {% endblock %}
