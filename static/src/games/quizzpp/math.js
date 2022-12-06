@@ -10,13 +10,13 @@ const resetBtn = document.querySelector(".reset-btn");
 
 var signal = "";
 var resultado = 0;
-var pontosMath = localStorage.getItem('math');
-var pontosAcumulados = pontosMath
+var pontosMath = 0;
+var pontosAcumulados = 0
 
 
 window.onload = conta();
 function update(){
-    pontosMath = localStorage.getItem('math');
+    pontosMath = localStorage.getItem('math') ? localStorage.getItem('math'):0;
     pontosAcumulados = pontosMath
     thisPointText.textContent = pontosMath;
     pointText.textContent = pontosAcumulados;
