@@ -69,8 +69,7 @@ body{
     border-radius: 20px;
     border: 2px solid rgb(255, 255, 255);
     margin: 5px;
-    background: linear-gradient(90deg, orange 0%, rgb(255, 232, 188) 35%, rgb(255, 255, 255) 100%);
-    background-size: 400% 400%;
+    background: #008000;
     color: white;
     transition: all 0.2s;
 }
@@ -78,7 +77,7 @@ body{
     font-size: 1.7rem;
     cursor: pointer;
 }
-#pointsText,#thisPointsText{
+.pointsText{
     font-size: 2rem;
 }
 .reset-btn{
@@ -123,4 +122,13 @@ body{
 #calc{
     font-size: 2rem;
     color:white;
+}
+.answerList{
+    width:300px;
+    justify-content: left;
+    text-align: left;
+    
+}
+.select{
+    padding: 10px;
 }

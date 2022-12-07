@@ -15,10 +15,11 @@
 <div style="margin-top:70px;">
     <div class="notifier"><h3>Você acertou!!</h3></div>
     <p>Pontos em matemática</p>
-    <p id="thisPointsText">0</p>
+    <p class="pointsText" id="thisPointsMath">0</p>
     <p>Pontos acumulados</p>
-    <p id="pointsText">0</p>
+    <p class="pointsText" id="pointsText">0</p>
     <button class="reset-btn">Resetar pontuação</button>
 </div>
 <script src="{{ url_for('static',filename='src/games/quizzpp/math.js') }}"></script>
+<script src="{{ url_for('static',filename='src/games/quizzpp/points.js') }}"></script>
 {% endblock %}
