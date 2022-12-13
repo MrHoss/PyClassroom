@@ -48,11 +48,11 @@ function createQuestion(){
 answerBtn.addEventListener("click", function () {
     if ((correctAnswer !== '') && (correctAnswer.replace(/\s/g, '_') == answered)){
         
-        incrementPoint();
-        localStorage.setItem('geo',incrementPoint());
+        incrementPoint()
         notifier.style.top="40vh";
         notifier.textContent="Você acertou!"
         notifier.style.backgroundColor="#008000";
+        
     }else{
         notifier.style.top="40vh";
         notifier.textContent=`Você errou!\n A resposta é ${correctAnswer}`

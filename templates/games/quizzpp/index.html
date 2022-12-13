@@ -1,4 +1,4 @@
-{% extends 'components/headquizzpp.html' %}
+{% extends 'components/headers/headquizzpp.html' %}
 {% block content %}
     <div class="mainContainer">
         <h1>Quizz++</h1>
@@ -16,7 +16,8 @@
     </div>
     <div>
         <p>Pontos acumulados</p>
-        <p class="pointsText">0</p>
+        <p class="pointsText" id="pointsText">0</p>
         <button class="reset-btn">Resetar pontuação</button>
     </div>
+    <script src="{{ url_for('static',filename='src/games/quizzpp/points.js') }}"></script>
 {% endblock %}

@@ -8,6 +8,13 @@
     <title>Educa++ - {{title}}</title>
 </head>
 <body>
-    {% block content %}{% endblock %}
+    {% block lateral_menu %}{% endblock %}
+    <div class="bodyContainer">
+        {% block header %}{% endblock %}
+        
+        <div class="contentContainer">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
 </body>
 </html>

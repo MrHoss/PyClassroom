@@ -1,0 +1,26 @@
+{% extends 'components/headquizzpp.html' %}
+{% block content %}
+<h2 style="font-weight:400;">Física</h2>
+
+<div class="mainContainer">
+    <h1>Quizz++</h1>
+</div>
+<div class="mainContainer resContainer">
+    <h2 id="askLabel">Pergunta</h2>
+    <div class="answerList">
+        <!--Alternativas-->
+    </div>
+    <button class="res-btn">RESPONDER</button>
+</div>
+<div style="margin-top:70px;">
+    <div class="notifier"><h3>Você acertou!!</h3></div>
+    <p>Pontos em física</p>
+    <p class="pointsText" id="thisPointsPhys">0</p>
+    <p>Pontos acumulados</p>
+    <p class="pointsText" id="pointsText">0</p>
+    <button class="reset-btn">Resetar pontuação</button>
+</div>
+<script src="{{ url_for('static',filename='src/games/quizzpp/phys.js') }}"></script>
+<script src="{{ url_for('static',filename='src/games/quizzpp/questionController.js') }}"></script>
+<script src="{{ url_for('static',filename='src/games/quizzpp/points.js') }}"></script>
+{% endblock %}

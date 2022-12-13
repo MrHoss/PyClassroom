@@ -65,5 +65,6 @@ const question = [
             ]
 function incrementPoint(){
     pontosGeo++;
+    localStorage.setItem("geo",pontosGeo);
     return pontosGeo;
 }

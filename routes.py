@@ -1,15 +1,18 @@
 from flask import Flask,render_template,request
 
-app = Flask(__name__, template_folder='pages')
+app = Flask(__name__, template_folder='templates')
 
+#EDUCA++ ROUTES
 @app.route('/',methods=['GET'])
 def home():
     return render_template('/home.html',title="Home")
 
 @app.route('/jogos/',methods=['GET'])
 def games():
-    return render_template('/educa/games.html',title="Jogos")
+    return render_template('/educa-student/games.html',title="Jogos")
+#END OF EDUCA++ ROUTES
 
+#QUIZZPP ROUTES
 @app.route('/quizzpp',methods=['GET'])
 def quizzpp():
     return render_template('/games/quizzpp/index.html',title="Quizz++")
@@ -45,6 +48,8 @@ def astronomy():
 @app.route('/quizzpp/tecnologia/')
 def technology():
     return render_template('/games/quizzpp/technology.html',title="Quizz++ Tecnologia")
+#END OF QUIZZPP ROUTES
+
 
 @app.route('/api')
 def api():
