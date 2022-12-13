@@ -7,6 +7,14 @@ app = Flask(__name__, template_folder='templates')
 def home():
     return render_template('/home.html',title="Home")
 
+@app.route('/biology/',methods=['GET'])
+def biology():
+    return render_template('/biology.html',title="Biologia")
+
+@app.route('/history/',methods=['GET'])
+def history():
+    return render_template('/history.html',title="History")
+
 @app.route('/jogos/',methods=['GET'])
 def games():
     return render_template('/educa-student/games.html',title="Jogos")
@@ -18,35 +26,35 @@ def quizzpp():
     return render_template('/games/quizzpp/index.html',title="Quizz++")
 
 @app.route('/quizzpp/matematica/', methods=['GET'])
-def math():
+def quizzppMath():
     return render_template('/games/quizzpp/math.html',title="Quizz++ Matemática")
 
 @app.route('/quizzpp/geografia/')
-def geography():
+def quizzppGeography():
     return render_template('/games/quizzpp/geography.html',title="Quizz++ Geografia")
 
 @app.route('/quizzpp/historia/')
-def history():
+def quizzppHistory():
     return render_template('/games/quizzpp/history.html',title="Quizz++ História")
 
 @app.route('/quizzpp/quimica/')
-def science():
+def quizzppScience():
     return render_template('/games/quizzpp/science.html',title="Quizz++ Química")
 
 @app.route('/quizzpp/biologia/')
-def biology():
+def quizzppBiology():
     return render_template('/games/quizzpp/biology.html',title="Quizz++ Biologia")
 
 @app.route('/quizzpp/fisica/')
-def physic():
+def quizzppPhysic():
     return render_template('/games/quizzpp/physic.html',title="Quizz++ Física")
 
 @app.route('/quizzpp/astronomia/')
-def astronomy():
+def quizzppAstronomy():
     return render_template('/games/quizzpp/astronomy.html',title="Quizz++ Astronomia")
 
 @app.route('/quizzpp/tecnologia/')
-def technology():
+def quizzppTechnology():
     return render_template('/games/quizzpp/technology.html',title="Quizz++ Tecnologia")
 #END OF QUIZZPP ROUTES
 

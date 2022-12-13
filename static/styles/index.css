@@ -16,8 +16,8 @@
     --primary-text-color: #000000;
     --secondary-text-color: #3b3b3b;
     --hover-menu-color: #e5e5e5;
-    --default-menushadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    --paper-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    --border-default-color: #e5e5e5;
+    --paper-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     --lateral-menu-width: 300px;
 }
 body{
@@ -32,7 +32,6 @@ body{
     margin: auto;
     height: calc(100vh - 70px);
     overflow-y: scroll;
-    padding: 10px;
 }
 /* END OF GENERAL AND DEFAULTS CONFIGURATION*/
 
@@ -67,20 +66,21 @@ body{
 #subtitleHeader{
     font-size: 1.0rem;
     color: var(--subtitle-text-color);
-    font-weight: 400;
+    font-weight: 500;
 }
 /* END OF HEADER CONFIGURATION*/
 
 /* LATERAL MENU CONFIGURATION*/
 #lateralHeader{
     height: 70px;
-    border: 1px solid var(--hover-menu-color)
+    border-bottom: 1px solid var(--hover-menu-color)
 }
 #lateral-menu{
     height: 100vh;
     background-color: var(--background-color);
     box-shadow: var(--default-menushadow);
     width: var(--lateral-menu-width);
+    border-right: 1px solid var(--border-default-color);
 }
 .menu-list{
     padding: 8px;
@@ -98,10 +98,14 @@ body{
 /* END OF LATERAL MENU CONFIGURATION*/
 
 /* CONTENT CONFIGURATION*/
+.TitleHeader{
+    padding: 5px;
+}
 .Paper{
     background-color: var(--paper-background-color);
     padding: 10px;
     border-radius: 8px;
+    border: 1px solid var(--border-default-color);
     box-shadow: var(--paper-shadow);
 }
 
