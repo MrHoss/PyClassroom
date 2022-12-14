@@ -1,0 +1,23 @@
+{% extends 'components/headers/headquizzpp.jinja' %}
+{% block content %}
+    <div class="mainContainer">
+        <h1>Quizz++</h1>
+        <h2>Um jogo de perguntas</h2>
+    </div>
+    <div class="mainContainer buttonContainer">
+        <button value='math' class="disc-btn">Matemática</button>
+        <button value='geo' class="disc-btn">Geografia</button>
+        <button value='hist' class="disc-btn">História</button>
+        <button value='chem' class="disc-btn">Química</button>
+        <button value='bio' class="disc-btn">Biologia</button>
+        <button value='phys' class="disc-btn">Física</button>
+        <button value='astro' class="disc-btn">Astronomia</button>
+        <button value='tech' class="disc-btn">Tecnologia</button>
+    </div>
+    <div>
+        <p>Pontos acumulados</p>
+        <p class="pointsText" id="pointsText">0</p>
+        <button class="reset-btn">Resetar pontuação</button>
+    </div>
+    <script src="{{ url_for('static',filename='js/games/quizzpp/points.js') }}"></script>
+{% endblock %}

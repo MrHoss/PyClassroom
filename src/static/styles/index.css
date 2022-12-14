@@ -1,0 +1,199 @@
+/* GENERAL AND DEFAULTS CONFIGURATION*/
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: rgba(3, 102, 214, 0.0) 0px 0px 0px 3px;
+    font-family: 'Gladly Accept', sans-serif;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: var(--paper-shadow);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--subtitle-text-color);
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+:root{
+    --primary-color:#fca311;
+    --secondary-color:blue;
+    --background-color: #ffffff;
+    --secondary-background-color: #ececec;
+    --paper-background-color: #ffffff;
+    --item-background:#134074;
+    --title-text-color: #ffffff;
+    --subtitle-text-color:#dfdfdf;
+    --primary-text-color: #000000;
+    --secondary-text-color: #3b3b3b;
+    --hover-menu-color: #e5e5e5;
+    --border-default-color: #e5e5e5;
+    --paper-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+body{
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+.bodyContainer{
+    width: 100%;
+}
+.contentContainer{
+    inset: 10px;
+    margin: auto;
+    overflow-y: scroll;
+}
+/* END OF GENERAL AND DEFAULTS CONFIGURATION*/
+
+/* HEADER CONFIGURATION*/
+#header{
+    background-color: var(--primary-color);
+    box-shadow: var(--default-menushadow);
+    height: 70px;
+}
+#main-menu{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+}
+#container1,#container2{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+#accountBtn{
+    text-align: right;
+    margin: 15px;
+    right: 0;
+}
+#titleHeader{
+    font-size: 1.8rem;
+    color:var(--title-text-color);
+}
+#subtitleHeader{
+    font-size: 1.0rem;
+    color: var(--subtitle-text-color);
+    font-weight: 500;
+}
+/* END OF HEADER CONFIGURATION*/
+
+/* LATERAL MENU CONFIGURATION*/
+#lateralHeader{
+    height: 70px;
+    border-bottom: 1px solid var(--hover-menu-color);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+#retractBtn{
+    margin: 5px;
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+#retractBtn:hover{
+   background-color: var(--hover-menu-color);
+   cursor: pointer;
+}
+#ProfileInfo{
+    display: block;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid var(--border-default-color);
+    transition: all 0.5s ease-in-out;
+    height: 200px;
+}
+.profilePic{
+    border: 1px solid var(--item-background);
+    border-radius: 50%;
+    height:150px;
+    width: 150px;
+    object-fit: cover;
+}
+#idNumber{
+    background-color: var(--hover-menu-color);
+    border: 1px solid var(--border-default-color);
+    border-radius: 5px;
+}
+#lateral-menu{
+    height: 100vh;
+    background-color: var(--background-color);
+    box-shadow: var(--default-menushadow);
+    width: 300px;
+    border-right: 1px solid var(--border-default-color);
+    transition: all 0.5s ease-in-out;
+}
+.menu-list{
+    height: calc(100vh - 300px);
+    padding: 8px;
+    overflow-y: scroll;
+}
+
+.navBtn:hover{
+    cursor: pointer;
+}
+.menu-list .navBtn{
+    background-color: var(--paper-background-color);
+    color: var(--primary-text-color);
+    border:0;
+    width: 100%;
+    margin:2px 0px;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 7px;
+    text-align: center;
+    border: 1px solid var(--border-default-color);
+}
+.menu-list .navBtn:hover{
+    background-color: var(--hover-menu-color);
+}
+.navIcon{
+    font-size: 2rem;
+    color: var(--title-text-color);
+    background-color: var(--item-background);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50%;
+}
+/* END OF LATERAL MENU CONFIGURATION*/
+
+/* CONTENT CONFIGURATION*/
+.TitleHeader{
+    padding: 5px;
+}
+.Paper{
+    background-color: var(--paper-background-color);
+    padding: 10px;
+    margin:5px;
+    border-radius: 8px;
+    border: 1px solid var(--border-default-color);
+    box-shadow: var(--paper-shadow);
+    
+}
+.SubTitle{
+    padding: 15px;
+}
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+/* END OF CONTENT CONFIGURATION*/
