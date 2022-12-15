@@ -1,11 +1,9 @@
 from flask import Flask,render_template,request
-from src.services.interfaceController import InterfaceController
+#from src.services.interfaceController import InterfaceController
 
 
 app = Flask(__name__, template_folder='templates')       
 Role = "tutor"
-def errorPage404():
-    return render_template('pages/404.jinja', title = '404',role=Role), 404
     
 #EDUCA++ ROUTES
 @app.route('/',methods=['GET'])
@@ -14,8 +12,8 @@ def home():
 
 @app.route('/<urlRoute>/',methods=['GET'])
 def MainPages(urlRoute):
-    Interface = InterfaceController.controllerMainPgs(urlRoute)
-    return render_template('pages/{}.jinja'.format(urlRoute),interface=Interface,title=urlRoute,role=Role)
+    #Interface = InterfaceController.controllerMainPgs(urlRoute)
+    return render_template('pages/{}.jinja'.format(urlRoute),interface='Interface',title=urlRoute,role=Role)
 
 
 
