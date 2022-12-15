@@ -13,7 +13,8 @@ def home():
 @app.route('/<urlRoute>/',methods=['GET'])
 def MainPages(urlRoute):
     Interface = InterfaceController.controllerMainPgs(urlRoute)
-    return render_template('pages/{}.jinja'.format(urlRoute),interface=Interface,title=urlRoute,role=Role)
+    print(Interface)
+    return render_template('pages/{}.jinja'.format(urlRoute),interface='Interface',title=urlRoute,role=Role)
 
 
 
