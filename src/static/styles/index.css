@@ -182,7 +182,8 @@ body{
     border-radius: 8px;
     border: 1px solid var(--border-default-color);
     box-shadow: var(--paper-shadow);
-    
+    max-height: calc(100vh - 150px);
+    overflow-y: scroll; 
 }
 .SubTitle{
     padding: 15px;
@@ -193,6 +194,25 @@ body{
     width: 100%;
     justify-content: center;
     margin-top: 20px;
+}
+.listBlock{
+    margin:5px;
+    padding: 10px;
+    border: 1px solid var(--border-default-color);
+    display:flex;
+    flex-wrap: wrap;
+}
+.listBlock:hover{
+    background-color: var(--hover-menu-color);
+}
+.listTitle{
+    font-size: 1rem;
+}
+.listBtn{
+    background-color: var(--item-background);
+    color:var(--title-text-color);
+    padding: 5px;
+    border: 0;
 }
 
 

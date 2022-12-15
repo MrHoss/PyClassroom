@@ -3,9 +3,14 @@ const navButtonsTitle = document.querySelectorAll(".navBtn h3");
 const ProfileInfo = document.querySelector("#ProfileInfo");
 const retractBtn = document.querySelector("#retractBtn");
 const lateralMenu = document.querySelector("#lateral-menu");
+const menuList = document.querySelector(".menu-list");
 //Navigation Buttons controller
 navButtons.forEach(button => {button.addEventListener("click", function () {
-    let url = `/${button.value}`;
+    let url = '/'
+    if(button.value){
+        url = `/${button.value}`;
+    }
+    url = url.replace("%",'/')
     console.log(url)
     window.location.href = url;
     })
@@ -15,6 +20,7 @@ navButtons.forEach(button => {button.addEventListener("click", function () {
 retractBtn.addEventListener("click", function (){
     if (lateralMenu.style.width === "300px"){
         lateralMenu.style.width = "100px";
+        menuList.style.height = "calc(100vh - 70px";
         ProfileInfo.style.opacity = 0;
         ProfileInfo.style.height = '0px';
         setTimeout(() => {
@@ -25,6 +31,7 @@ retractBtn.addEventListener("click", function (){
     }else{
         lateralMenu.style.width = "300px";
         ProfileInfo.style.display = 'block';
+        menuList.style.height = "calc(100vh - 300px";
         setTimeout(() => {
             navButtonsTitle.forEach((title)=>title.style.display = 'block')
             ProfileInfo.style.height = '200px';
