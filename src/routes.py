@@ -21,13 +21,13 @@ def MainPages(urlRoute):
     except:
         return errorPage404()
 
-"""@app.route('/<string:urlRoute>/<string:urlRoute2>/',methods=['GET'])
+@app.route('/<string:urlRoute>/<string:urlRoute2>/',methods=['GET'])
 def InsidePages(urlRoute,urlRoute2):
     Interface = InterfaceController.controllerInsidePgs(f"{urlRoute}/{urlRoute2}")
     try:
         return render_template('pages/{}/{}.jinja'.format(urlRoute,urlRoute2),interface=Interface,title=urlRoute,role=Role)
     except:
-        return errorPage404()"""
+        return errorPage404()
 
 #END OF EDUCA++ ROUTES
 
