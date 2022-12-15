@@ -11,11 +11,10 @@ def errorPage404():
 @app.route('/',methods=['GET'])
 def home():
     return render_template('pages/home.jinja',title="Home",role=Role)
-@app.route('/<urlRoute>/',methods=['GET'])
 
+@app.route('/<urlRoute>/',methods=['GET'])
 def MainPages(urlRoute):
     Interface = InterfaceController.controllerMainPgs(urlRoute)
-    print(urlRoute)
     try:
         return render_template('pages/{}.jinja'.format(urlRoute),interface=Interface,title=urlRoute,role=Role)
     except:
