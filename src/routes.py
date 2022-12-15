@@ -17,10 +17,6 @@ def MainPages(urlRoute):
     Interface = InterfaceController.controllerMainPgs(urlRoute)
     return render_template('pages/{}.jinja'.format(urlRoute),interface=Interface,title=urlRoute,role=Role)
 
-@app.route('/<string:urlRoute>/<string:urlRoute2>/',methods=['GET'])
-def InsidePages(urlRoute,urlRoute2):
-    Interface = InterfaceController.controllerInsidePgs(f"{urlRoute}/{urlRoute2}")
-    return render_template('pages/{}/{}.jinja'.format(urlRoute,urlRoute2),interface=Interface,title=urlRoute,role=Role)
 
 
 #END OF EDUCA++ ROUTES
@@ -36,9 +32,9 @@ def quizzppPages(urlRoute):
     
 #END OF QUIZZPP ROUTES
 
-@app.errorhandler(404)
+"""@app.errorhandler(404)
 def page_not_found(error):
-   return errorPage404()
+   return errorPage404()"""
    
 
 @app.route('/api')
