@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-#from src.services.interfaceController import InterfaceController
+from src.services.interfaceController import InterfaceController
 
 
 app = Flask(__name__, template_folder='templates')       
@@ -12,8 +12,8 @@ def home():
 
 @app.route('/<urlRoute>/',methods=['GET'])
 def MainPages(urlRoute):
-    #Interface = InterfaceController.controllerMainPgs(urlRoute)
-    return render_template('pages/{}.jinja'.format(urlRoute),interface='Interface',title=urlRoute,role=Role)
+    Interface = InterfaceController.controllerMainPgs(urlRoute)
+    return render_template('pages/{}.jinja'.format(urlRoute),interface=Interface,title=urlRoute,role=Role)
 
 
 
