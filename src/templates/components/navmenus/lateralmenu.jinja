@@ -4,9 +4,9 @@
 <nav id="lateral-menu">
     <div id="lateralHeader">
         <button id="retractBtn">
-            <span class="btn material-symbols-rounded">
+            <i class="btn material-icons">
                 chevron_left
-            </span>
+            </i>
         </button>
     </div>
     <div id="ProfileInfo">
@@ -17,73 +17,73 @@
 
     <ul class="menu-list">
         <button value="studying" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+            <i class="navIcon material-icons">
                 computer
-            </span>
+            </i>
             <h3>Estudar</h3>
         </button>
-        <button value="library" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+        <button value="secretary" class="navBtn lateralItemCard">
+            <i class="navIcon material-icons">
                 support_agent
-            </span>
+            </i>
             <h3>Secretaria Digital</h3>
         </button>
         <button value="library" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+            <i class="navIcon material-icons">
                 local_library
-            </span>
+            </i>
             <h3>Biblioteca</h3>
         </button>
         <button value="courses" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+            <i class="navIcon material-icons">
                 school
-            </span>
+            </i>
             <h3>Cursos</h3>
         </button>
-        <button value="manual" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+        <button value="notices" class="navBtn lateralItemCard">
+            <i class="navIcon material-icons">
                 notifications
-                </span>
+                </i>
             <h3>Avisos</h3>
         </button>
-        <button value="instructions" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+        <button value="requests" class="navBtn lateralItemCard">
+            <i class="navIcon material-icons">
                 info
-            </span>
+            </i>
             <h3>Solicitações</h3>
         </button>
         <button value="manual" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+            <i class="navIcon material-icons">
                 accessibility_new
-            </span>
+            </i>
             <h3>Manual do Aluno</h3>
         </button>
         <button value="instructions" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+            <i class="navIcon material-icons">
                 info
-            </span>
+            </i>
             <h3>Como Estudar</h3>
         </button>
         {% if role == "student" %}
-        <button value="courses" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
-                monitoring
-                </span>
+        <button value="performance" class="navBtn lateralItemCard">
+            <i class="navIcon material-icons">
+                trending_up
+                </i>
             <h3>Meu Desempenho</h3>
         </button>
         {% endif %}
 
         {% if role == "tutor" %}
-        <button value="library" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
+        <button value="settings" class="navBtn lateralItemCard">
+            <i class="navIcon material-icons">
                 settings
-                </span>
+                </i>
             <h3>Configurações</h3>
         </button>
-        <button value="courses" class="navBtn lateralItemCard">
-            <span class="navIcon material-symbols-rounded">
-                monitoring
-                </span>
+        <button value="students-performance" class="navBtn lateralItemCard">
+            <i class="navIcon material-icons">
+                trending_up
+                </i>
             <h3>Desempenho dos seus alunos</h3>
         </button>
         {% endif %}

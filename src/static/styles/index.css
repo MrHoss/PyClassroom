@@ -32,6 +32,7 @@
     --secondary-background-color: #ececec;
     --paper-background-color: #ffffff;
     --item-background:#134074;
+    --item-background-hover:#1657a1;
     --title-text-color: #ffffff;
     --subtitle-text-color:#dfdfdf;
     --primary-text-color: #000000;
@@ -44,6 +45,9 @@ body{
     display: flex;
     height: 100vh;
     overflow: hidden;
+}
+hr{
+    border: 1px solid var(--border-default-color);
 }
 .bodyContainer{
     width: 100%;
@@ -188,32 +192,117 @@ body{
 .SubTitle{
     padding: 15px;
 }
-.cardsContainer{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    margin-top: 20px;
-}
-.listBlock{
+
+.listItem{
     margin:5px;
     padding: 10px;
     border: 1px solid var(--border-default-color);
     display:flex;
     flex-wrap: wrap;
 }
-.listBlock:hover{
+.listItem:hover{
     background-color: var(--hover-menu-color);
 }
 .listTitle{
     font-size: 1rem;
+    padding: 4px;
 }
 .listBtn{
     background-color: var(--item-background);
     color:var(--title-text-color);
-    padding: 5px;
+    padding: 8px;
     border: 0;
+    border-radius: 2px;
 }
+.listBtn:hover{
+    background-color: var(--item-background-hover);
+}
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
+/* Card styles*/
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    }
+    
+    .cardImage {
+    width: 300px;
+    height: 250px;
+    background-color: #f5f5f5;
+    }
+    
+    .cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+    .cardContent {
+    padding: 15px;
+    }
+    
+    .cardTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    }
+    
+    .cardAuthor {
+    font-size: 14px;
+    color: #666;
+    }
+    
+    /* Accordion style */
+    
+    .accordion {
+    overflow: hidden;
+    }
+    
+    .accordionItem {
+    background-color: var(--background-color);
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    margin:5px;
+    padding: 15px;
+    border: 1px solid var(--border-default-color);
+
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: all 0.4s ease-in-out;
+    }
+    
+    .accordionItem a {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-text-color);
+    }
+    
+    .accordionItem:hover {
+    background-color: var(--hover-menu-color);
+    }
+    
+    .accordionContent {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    }
+    .accordionItem.active {
+    background-color: var(--secondary-background-color);
+    }
+    .accordionItem.active .accordionContent {
+    max-height: 500px;
+    }
 
 
 /* END OF CONTENT CONFIGURATION*/

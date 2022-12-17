@@ -1,3 +1,28 @@
 {% extends 'components/navmenus/lateralmenu.jinja' %}
 {% block content %}
+<div class="TitleHeader">
+    <h1 class="Title">Matemática</h1>
+</div>
+<div class="Paper">
+<div class="accordion">
+    {% for aula in interface %}
+  <div class="accordionItem">
+    <a href="#">{{aula['title']}}</a>
+    
+    <div class="accordionContent">
+    <hr>
+
+      <div>
+        {{aula['description']}}
+      </div>
+      <div>
+      <button class="navBtn listBtn" value="studying/{{aula['access_link']}}">Acessar</button>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+<script src="{{ url_for('static',filename='js/effects/accordion.js') }}" defer></script>
+
 {% endblock %}

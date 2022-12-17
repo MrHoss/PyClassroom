@@ -6,7 +6,7 @@
 </div>
 <div class="Paper">
     {% for i in interface %}
-        <div class="listBlock">
+        <div class="listItem">
             <div style="width:50%"><h6 class="listTitle">{{i['discipline']}}</h6><div><button class="navBtn listBtn" value="studying/{{i['nameID']}}">Acessar</button></div></div>
             <div style="display:flex;justify-content:right;width:50%;align-items:center;"><progress style="right:0;"value= {{i['progress']}} max="100"></progress></div>
             

@@ -3,7 +3,7 @@ from src.services.interfaceController import InterfaceController
 
 
 app = Flask(__name__, template_folder='templates')       
-Role = "tutor"
+Role = "student"
 def errorPage404():
     return render_template('pages/404.jinja', title = '404',role=Role), 404
     
