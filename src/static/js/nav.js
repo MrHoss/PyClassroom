@@ -30,8 +30,14 @@ retractBtn.addEventListener("click", function (){
     
     if(lateralMenu.classList.contains("hidden")){
         removeClass()
+        retractBtn.innerHTML = `<i class="btn material-icons">
+        chevron_left
+    </i>`;
     }else{
         addClass()
+        retractBtn.innerHTML = `<i class="btn material-icons">
+        menu
+    </i>`;
     }
     
 });
