@@ -26,13 +26,13 @@
     background: #555;
   }
 :root{
-    --primary-color:#fca311;
-    --secondary-color:blue;
+    --primary-color:#ff9505;
+    --secondary-color:#30638e;
     --background-color: #ffffff;
     --secondary-background-color: #ececec;
     --paper-background-color: #ffffff;
-    --item-background:#134074;
-    --item-background-hover:#1657a1;
+    --item-background:#004e89;
+    --item-background-hover:#1a659e;
     --title-text-color: #ffffff;
     --subtitle-text-color:#dfdfdf;
     --primary-text-color: #000000;
@@ -92,6 +92,10 @@ hr{
     color: var(--subtitle-text-color);
     font-weight: 500;
 }
+#profileIcon{
+    color:white;
+    font-size:2rem;
+}
 /* END OF HEADER CONFIGURATION*/
 
 /* LATERAL MENU CONFIGURATION*/
@@ -141,8 +145,20 @@ hr{
     border-right: 1px solid var(--border-default-color);
     transition: all 0.5s ease-in-out;
 }
+#lateral-menu.hidden{
+    width:100px;
+}
+#lateral-menu.hidden #ProfileInfo,#lateral-menu.hidden .navBtn h3{
+    opacity:0;
+    height:0px;
+    overflow: hidden;
+}
+#lateral-menu.hidden .menu-list{
+    height: calc(100vh - 70px);
+
+}
 .menu-list{
-    height: calc(100vh - 300px);
+    height: calc(100vh - 270px);
     padding: 8px;
     overflow-y: scroll;
 }
@@ -179,6 +195,12 @@ hr{
 .TitleHeader{
     padding: 5px;
 }
+.searchFields{
+    border-radius: 8px;
+    border: 1px solid var(--border-default-color);
+    padding: 5px;
+    font-size: 1rem;
+}
 .Paper{
     background-color: var(--paper-background-color);
     padding: 10px;
@@ -197,8 +219,10 @@ hr{
     margin:5px;
     padding: 10px;
     border: 1px solid var(--border-default-color);
+    border-radius: 5px;
     display:flex;
     flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
 }
 .listItem:hover{
     background-color: var(--hover-menu-color);
@@ -220,8 +244,13 @@ hr{
 .cardsContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
 
+}
+.columnContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 /* Card styles*/
 .card {
@@ -232,77 +261,211 @@ hr{
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 5px;
-    }
+    justify-content: center;
+}
     
-    .cardImage {
+.cardImage {
     width: 300px;
-    height: 250px;
+    max-height: 250px;
     background-color: #f5f5f5;
-    }
+}
     
-    .cardImage img {
+.cardImage img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    }
+    object-fit: contain;
+}
     
-    .cardContent {
+.cardContent {
     padding: 15px;
-    }
+}
     
-    .cardTitle {
+.cardTitle {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
-    }
+}
     
-    .cardAuthor {
+.cardSubtitle {
     font-size: 14px;
     color: #666;
-    }
+}
+.cardBtn{
+    background-color: transparent;
+    height:300px;
+    width:300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.cardMd{
+    background-color: transparent;
+    height:300px;
+    width:300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.cardBtn:hover{
+    background-color: var(--hover-menu-color);
+    cursor: pointer;
+}
+.cardIcon{
+    font-size: 4rem;
+    color: var(--title-text-color);
+    background-color: var(--item-background);
+    padding: 25px;
+    margin: 5px;
+    border-radius: 50%;
+    
+}
     
     /* Accordion style */
     
-    .accordion {
+.accordion {
     overflow: hidden;
-    }
-    
-    .accordionItem {
+}
+.accordion i{
+    font-size: 20px;
+}
+.accordionItem {
     background-color: var(--background-color);
     color: var(--secondary-text-color);
     cursor: pointer;
     margin:5px;
     padding: 15px;
     border: 1px solid var(--border-default-color);
-
+    border-radius: 5px;
     text-align: left;
     outline: none;
     font-size: 15px;
     transition: all 0.4s ease-in-out;
     }
     
-    .accordionItem a {
+.accordionItem a {
     display: block;
     text-decoration: none;
     color: var(--primary-text-color);
-    }
+}
     
-    .accordionItem:hover {
+.accordionItem:hover {
     background-color: var(--hover-menu-color);
-    }
+}
     
-    .accordionContent {
+.accordionContent {
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-    }
-    .accordionItem.active {
+}
+.accordionItem.active {
     background-color: var(--secondary-background-color);
     }
-    .accordionItem.active .accordionContent {
+.accordionItem.active .accordionContent {
     max-height: 500px;
-    }
+}
+
+
+/* Calendar */
+
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+
+#calendar{
+    margin: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: var(--item-background);
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: var(--background-color);
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: var(--subtitle-text-color);
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: var(--secondary-text-color);
+  text-align: center;
+}
+
+.days {
+  padding: 10px 0;
+  background: var(--secondary-background-color);
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: var(--secondary-text-color);
+}
+
+.days li .active {
+  padding: 5px;
+  background: var(--item-background-hover);
+  color: var(--title-text-color) !important;
+  border-radius: 50%;
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
 
 
 /* END OF CONTENT CONFIGURATION*/

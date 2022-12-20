@@ -5,6 +5,7 @@ const retractBtn = document.querySelector("#retractBtn");
 const lateralMenu = document.querySelector("#lateral-menu");
 const menuList = document.querySelector(".menu-list");
 //Navigation Buttons controller
+
 navButtons.forEach(button => {button.addEventListener("click", function () {
     let url = '/'
     if(button.value){
@@ -15,28 +16,22 @@ navButtons.forEach(button => {button.addEventListener("click", function () {
     window.location.href = url;
     })
 });
-
+const addClass = () =>{
+    lateralMenu.classList.add("hidden");
+    sessionStorage.setItem('lateralmenu','hidden');
+}
+const removeClass = () =>{
+    lateralMenu.classList.remove("hidden");
+    sessionStorage.removeItem('lateralmenu');
+}
+sessionStorage.getItem('lateralmenu') === 'hidden' ? addClass(): removeClass()
 //Lateral menu expand/retract
 retractBtn.addEventListener("click", function (){
-    if (lateralMenu.style.width === "300px"){
-        lateralMenu.style.width = "100px";
-        menuList.style.height = "calc(100vh - 70px";
-        ProfileInfo.style.opacity = 0;
-        ProfileInfo.style.height = '0px';
-        setTimeout(() => {
-            ProfileInfo.style.display = 'none';
-        },200)
-        navButtonsTitle.forEach((title)=>title.style.display = 'none')
-
+    
+    if(lateralMenu.classList.contains("hidden")){
+        removeClass()
     }else{
-        lateralMenu.style.width = "300px";
-        ProfileInfo.style.display = 'block';
-        menuList.style.height = "calc(100vh - 300px";
-        setTimeout(() => {
-            navButtonsTitle.forEach((title)=>title.style.display = 'block')
-            ProfileInfo.style.height = '200px';
-            ProfileInfo.style.opacity = 100;
-            ProfileInfo.style.display = 'block';
-        },200)
+        addClass()
     }
+    
 });

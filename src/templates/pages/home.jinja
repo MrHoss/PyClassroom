@@ -5,80 +5,22 @@
 </div>
 <div class="Paper">
     <h2 class="SubTitle">Olá aluno seja bem vindo!</h2>
-    <div class="cardsContainer">
-        <button value="studying" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                computer
-            </span>
-            <h3>Estudar</h3>
-        </button>
-        <button value="library" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                support_agent
-            </span>
-            <h3>Secretaria Digital</h3>
-        </button>
-        <button value="library" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                local_library
-            </span>
-            <h3>Biblioteca</h3>
-        </button>
-        <button value="courses" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                school
-            </span>
-            <h3>Cursos</h3>
-        </button>
-        <button value="manual" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                notifications
-                </span>
-            <h3>Avisos</h3>
-        </button>
-        <button value="instructions" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                info
-            </span>
-            <h3>Solicitações</h3>
-        </button>
-        <button value="manual" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                accessibility_new
-            </span>
-            <h3>Manual do Aluno</h3>
-        </button>
-        <button value="instructions" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                info
-            </span>
-            <h3>Como Estudar</h3>
-        </button>
-
-        {% if role == "student" %}
-        <button value="courses" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                monitoring
-                </span>
-            <h3>Meu Desempenho</h3>
-        </button>
-        {% endif %}
-
-        {% if role == "tutor" %}
-        <button value="library" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                settings
-                </span>
-            <h3>Configurações</h3>
-        </button>
-        <button value="courses" class="navBtn itemCard">
-            <span class="cardIcon material-symbols-rounded">
-                monitoring
-                </span>
-            <h3>Desempenho dos seus alunos</h3>
-        </button>
-        {% endif %}
+    <div class="columnContainer">
+    <div>
+    {% for i in interface %}
+        <div class="listItem">
+            <div style="width:50%"><h6 class="listTitle">{{i['discipline']}}</h6><div><button class="navBtn listBtn" value="studying/{{i['nameID']}}">Acessar</button></div></div>
+            <div style="display:flex;justify-content:right;width:50%;align-items:center;"><progress style="right:0;"value='' max="100"></progress></div>
+        </div>
+    {% endfor %}
     </div>
+    <div>
+        <button value='quizzpp' class="navBtn">Jogos</button>
+    </div>
+    <div>
+        <h3>Novidades</h3>
+    </div>
+    </div> 
 </div>
 
 {% endblock %}

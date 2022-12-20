@@ -6,55 +6,55 @@ class InterfaceController():
                 "discipline":"Matemática",
                 "progress":90,
                 "note":100,
-                "nameID":"math",
+                "titleID":"math",
             },
                             {
                 "discipline":"Português",
                 "progress":75,
                 "note":100,
-                "nameID":"portuguese",
+                "titleID":"portuguese",
             },
             {
                 "discipline":"Geografia",
                 "progress":70,
                 "note":100,
-                "nameID":"geography",
+                "titleID":"geography",
             },
             {
                 "discipline":"História",
                 "progress":75,
                 "note":100,
-                "nameID":"history",
+                "titleID":"history",
             },
             {
                 "discipline":"Química",
                 "progress":40,
                 "note":100,
-                "nameID":"chemistry",
+                "titleID":"chemistry",
             },
             {
                 "discipline":"Biologia",
                 "progress":50,
                 "note":100,
-                "nameID":"biology",
+                "titleID":"biology",
             },
             {
                 "discipline":"Física",
                 "progress":75,
                 "note":100,
-                "nameID":"physic",
+                "titleID":"physic",
             },
             {
                 "discipline":"Inglês",
                 "progress":75,
                 "note":100,
-                "nameID":"english",
+                "titleID":"english",
             },
             {
                 "discipline":"Filosofia",
                 "progress":75,
                 "note":100,
-                "nameID":"philosophy",
+                "titleID":"philosophy",
             },
             ]
             return disciplines
@@ -70,33 +70,82 @@ class InterfaceController():
                         "title": "O Mundo de Sofia",
                         "author": "Jostein Gaarder",
                         "publisher": "Aschehoug",
-                        "cover_image": "https://images-americanas.b2w.io/produtos/2019108396/imagens/livro-o-pequeno-principe/2019108396_1_large.jpg",
+                        "cover_image": "https://m.media-amazon.com/images/I/91U9VjiT-xL.jpg",
                     },
                     {
                         "title": "Harry Potter e a Pedra Filosofal",
                         "author": "J.K. Rowling",
                         "publisher": "Bloomsbury",
-                        "cover_image": "https://images-americanas.b2w.io/produtos/2019108396/imagens/livro-o-pequeno-principe/2019108396_1_large.jpg",
+                        "cover_image": "https://m.media-amazon.com/images/I/81ibfYk4qmL.jpg",
                     },
                     {
                         "title": "1984",
                         "author": "George Orwell",
                         "publisher": "Secker & Warburg",
-                        "cover_image": "https://images-americanas.b2w.io/produtos/2019108396/imagens/livro-o-pequeno-principe/2019108396_1_large.jpg",
+                        "cover_image": "https://m.media-amazon.com/images/I/61t0bwt1s3L.jpg",
                     },
                     {
                         "title": "Matar um Mockingbird",
                         "author": "Harper Lee",
                         "publisher": "J.B. Lippincott & Co.",
-                        "cover_image": "https://images-americanas.b2w.io/produtos/2019108396/imagens/livro-o-pequeno-principe/2019108396_1_large.jpg",
+                        "cover_image": "https://m.media-amazon.com/images/I/81aY1lxk+9L.jpg",
                     },
                     {
                         "title": "O Senhor dos Anéis",
                         "author": "J.R.R. Tolkien",
                         "publisher": "George Allen & Unwin",
-                        "cover_image": "https://images-americanas.b2w.io/produtos/2019108396/imagens/livro-o-pequeno-principe/2019108396_1_large.jpg",
+                        "cover_image": "https://img2.doceru.com/image/l/csx5nx.png",
                     }]
             return books
+        elif(urlRoute == "events"):
+            events = [    {'name': 'Assembléia de Pais', 'date': '2022-01-20', 'location': 'Salão Nobre'},    {'name': 'Feira de Ciências', 'date': '2022-03-15', 'location': 'Ginásio'},    {'name': 'Gincana Escolar', 'date': '2022-05-10', 'location': 'Campo de Futebol'},    {'name': 'Festa Junina', 'date': '2022-06-24', 'location': 'Quadra Poliesportiva'},    {'name': 'Formatura', 'date': '2022-07-20', 'location': 'Teatro Municipal'}]
+            return events
+
+        elif(urlRoute == "courses"):
+            courses = [
+                    {
+                        "title": "Curso de Desenvolvimento Web",
+                        "description": "Aprenda a desenvolver aplicações web usando HTML, CSS e JavaScript.",
+                        "duration": "6 meses",
+                        "price": "R$ 1.000,00"
+                    },
+                    {
+                        "title": "Curso de Design Gráfico",
+                        "description": "Aprenda a criar designs atraentes e eficazes usando programas de design gráfico.",
+                        "duration": "4 meses",
+                        "price": "R$ 800,00"
+                    },
+                    {
+                        "title": "Curso de Programação para Iniciantes",
+                        "description": "Aprenda os fundamentos da programação e comece a desenvolver seus próprios aplicativos.",
+                        "duration": "8 meses",
+                        "price": "R$ 1.500,00"
+                    },
+                    {
+                        "title": "Curso de Marketing Digital",
+                        "description": "Aprenda as técnicas e estratégias mais eficazes para promover produtos e serviços online.",
+                        "duration": "5 meses",
+                        "price": "R$ 1.200,00"
+                    },
+                    {
+                        "title": "Curso de Redes de Computadores",
+                        "description": "Aprenda a projetar, configurar e gerenciar redes de computadores.",
+                        "duration": "7 meses",
+                        "price": "R$ 1.800,00"
+                    },
+                    {
+                        "title": "Curso de Desenvolvimento de Jogos",
+                        "description": "Aprenda a criar jogos para diferentes plataformas usando diferentes tecnologias.",
+                        "duration": "9 meses",
+                        "price": "R$ 2.500,00"
+                    },
+                    {
+                        "title": "Curso de Fotografia",
+                        "description": "Aprenda a tirar fotos incríveis e a editá-las usando técnicas avançadas.",
+                        "duration": "4 meses",
+                        "price": "R$ 1.000,00",
+                    },]
+            return courses
         else:
             return "salve"
 

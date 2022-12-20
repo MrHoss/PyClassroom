@@ -1,0 +1,20 @@
+{% extends 'components/navmenus/lateralmenu.jinja' %}
+{% block content %}
+
+<div class="TitleHeader">
+    <h1 class="Title">Biblioteca</h1>
+</div>
+<div class="Paper cardsContainer">
+    {% for i in interface %}
+        <div class="cardMd">
+        <div class="cardContent">
+            <h3 style='height:30px;padding:5px;'class="cardTitle">{{i['title']}}</h3>
+            <hr style="border-color:#134074">
+            <p style='height:80px;padding:5px;' class="cardSubtitle">{{i['description']}}</p>
+            <button class="navBtn listBtn" value='courses/course{{interface.index(i)}}'">Acessar</button>
+        </div>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

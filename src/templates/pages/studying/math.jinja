@@ -7,7 +7,7 @@
 <div class="accordion">
     {% for aula in interface %}
   <div class="accordionItem">
-    <a href="#">{{aula['title']}}</a>
+    <a><i class="material-icons">expand_more</i>  {{aula['title']}}</a>
     
     <div class="accordionContent">
     <hr>
@@ -16,7 +16,7 @@
         {{aula['description']}}
       </div>
       <div>
-      <button class="navBtn listBtn" value="studying/{{aula['access_link']}}">Acessar</button>
+      <button class="navBtn listBtn" value="studying/math/{{aula['access_link']}}">Acessar</button>
       </div>
     </div>
   </div>
