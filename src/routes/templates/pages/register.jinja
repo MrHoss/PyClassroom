@@ -1,0 +1,13 @@
+{% extends 'components/headers/head.jinja' %}
+{% block not_logged %}
+<div class="centerContainer">
+  <form class="AuthForm" action="" method="post">
+    <h1>Registrar</h1>
+    <input class="TextField" name="username" type="username" placeholder="Username" required>
+    <input class="TextField" name="email" type="email" placeholder="Email" required>
+    <input class="TextField" name="password" type="password" placeholder="Password" required>
+    <button class="WideBtn" type="submit">Log in</button>
+  </form>
+</div>
+{% endblock %}
+
