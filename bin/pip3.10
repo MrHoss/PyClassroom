@@ -1,4 +1,4 @@
-#!/home/daniel/Documentos/Desenvolvimento/Quizz++/venv/bin/python3
+#!/home/daniel/Documentos/Desenvolvimento/educa-pp/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
