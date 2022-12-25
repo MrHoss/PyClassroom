@@ -1,5 +1,5 @@
 from functools import wraps
-from flask import render_template,request, redirect
+from flask import render_template,request, redirect,abort
 from flask_login import login_user, logout_user
 from src.database.models import Users
 from src.database.connect import session
@@ -22,21 +22,25 @@ def authenticationRoutes(app):
                 return redirect('/')
         return render_template('pages/login.jinja',title="Home")
         
-    @app.route('/register',methods=['GET','POST'])
+    @app.route('/register/',methods=['GET','POST'])
     def register():
         if request.method == 'POST':
             name = request.form['username']
             email = request.form['email']
             pwd = request.form['password']
+            role = 'student'
 
-            user = Users(name, email,pwd)
-            session.add(user)
-            session.commit()
-            return redirect('/') 
+            user = Users(name, email,pwd,role)
+            try:
+                session.add(user)
+                session.commit()
+                return redirect('/') 
+            except:
+                abort(409,'this_user_already_exists')
             
         return render_template('pages/register.jinja',title="Home")
 
-    @app.route('/logout',methods=['GET','POST'])
+    @app.route('/logout/',methods=['GET','POST'])
     def logout():
         logout_user()
-        return redirect('/login')
+        return redirect('/login/')

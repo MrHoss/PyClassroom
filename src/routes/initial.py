@@ -1,12 +1,7 @@
-from functools import wraps
-from flask import Flask,render_template,request,abort,redirect
-from flask_login import login_required,login_manager
-from src.services.interfaceController import InterfaceController
-from src.database.connect import session
+from flask import render_template
+from flask_login import login_required
 
-
-
-def mainRoutes(app):
+def initialRoutes(app):
     
     @app.route('/',methods=['GET'])
     @login_required

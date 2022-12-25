@@ -8,7 +8,7 @@ def migrateAll():
 
 
 def seedAll():
-    user = Users(name='Daniel', email='danielsouzaT99@hotmail.com',password='271208')
+    user = Users(name='Daniel', email='danielsouzaT99@hotmail.com',password='271208',role='admin')
     session.add(user)
     session.commit()
 migrateAll()

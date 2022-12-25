@@ -1,6 +1,6 @@
 # users model
 
-from sqlalchemy import Column, Integer, String,ForeignKey,DateTime,func
+from sqlalchemy import Column, Integer, String,ForeignKey,DateTime,UniqueConstraint,func
 from src.routes import login_manager
 from src.database.connect import db_session
 from sqlalchemy.ext.declarative import declarative_base
@@ -17,12 +17,14 @@ def get_user(user_id):
 
 class Users(Base, UserMixin):
     __tablename__ = 'Users'
-    id = Column(Integer, autoincrement=True,primary_key=True)
+    id = Column(Integer, unique=True,autoincrement=True,primary_key=True)
     name = Column(String(150),nullable=False)
-    email = Column(String(150),nullable=False)
+    email = Column(String(150),unique=True,nullable=False)
     password = Column(String(150),nullable=False)
     role = Column(String(length=15),nullable=True)
-    def __init__(self,name,email,password):
+    UniqueConstraint('id','email',name='idx_id_email')
+    def __init__(self,name,email,password,role):
+        self.role = role
         self.name = name
         self.email = email
         self.password = generate_password_hash(password)

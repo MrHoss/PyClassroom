@@ -5,6 +5,7 @@
     box-shadow: rgba(3, 102, 214, 0.0) 0px 0px 0px 3px;
     font-family: 'Gladly Accept', sans-serif;
     text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
 }
 
 ::-webkit-scrollbar {
@@ -89,7 +90,74 @@ hr{
 #profileIcon{
     color:white;
     font-size:2rem;
+    border-radius: 50%;
+    padding: 3px;
+    cursor: pointer;
+    vertical-align: middle;
 }
+#profileIcon:hover{
+    background-color: #ffffff11;
+}
+#dropdownbtn{
+    display: none;
+}
+.dropdownMenu *{
+    padding: 0 0;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+}
+[id^=dropdownbtn]:checked + ul{
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown-item{
+    background-color: transparent;
+    border: 0;
+    color:#ffffff;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    width: auto;
+    margin: auto -5px;
+    height: 40px;
+    cursor: pointer;
+}
+.dropdown-item:hover{
+    background-color: #3b3b3b;
+}
+
+.dropdown .dropdownMenu{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    background-color: #141414f6;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #333333;
+    padding: 5px 5px;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+.dropdown .dropdownMenu::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #141414f6 transparent;
+}
+  
 /* END OF HEADER CONFIGURATION*/
 
 /* LATERAL MENU CONFIGURATION*/
@@ -221,6 +289,7 @@ hr{
     border: 0;
     border-radius: 8px;
     width: 100%;
+    cursor: pointer;
 }
 .WideBtn:hover{
     background-color: var(--item-background-hover);
@@ -500,6 +569,7 @@ ul {list-style-type: none;}
   color: var(--title-text-color) !important;
   border-radius: 50%;
 }
+
 
 /* Add media queries for smaller screens */
 @media screen and (max-width:720px) {

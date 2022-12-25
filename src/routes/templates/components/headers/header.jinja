@@ -7,7 +7,18 @@
             <h2 id="subtitleHeader">Plataforma Educacional Open Source</h2>
         </div>
         <div id="container2">
-            <div id="accountBtn"><i id="profileIcon" class="material-icons">person</i></div>
+            <div class='dropdown'id="accountBtn">
+                <label for='dropdownbtn' id="profileIcon" class="material-icons">
+                    person
+                </label>
+                <input type="checkbox" id="dropdownbtn" /> 
+                <ul class="dropdownMenu">
+                    <button value="logout" class="navBtn dropdown-item">
+                    Encerrar sessão
+                        <span class="material-icons">power_settings_new</span>
+                    </button>
+                </ul>
+            </div>
         </div>
     </div>
 </header>

@@ -13,7 +13,7 @@ navButtons.forEach(button => {button.addEventListener("click", function () {
     }
     url = url.replace("%",'/')
     console.log(url)
-    window.location.href = url;
+    window.location.assign(url);
     })
 });
 const addClass = () =>{

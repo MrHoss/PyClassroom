@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request
 
 def quizzppRoute(app):
-    @app.route('/quizzpp',methods=['GET'])
+    @app.route('/quizzpp/',methods=['GET'])
     def quizzpp():
         return render_template('/games/quizzpp/index.jinja',title="Quizz++")
 
