@@ -1,0 +1,16 @@
+src/database/__pycache__/connect.cpython-310.pyc
+src/database/__pycache__/install.cpython-310.pyc
+src/database/__pycache__/models.cpython-310.pyc
+src/routes/__pycache__/__init__.cpython-310.pyc
+src/routes/__pycache__/_errors_.cpython-310.pyc
+src/routes/__pycache__/admin.cpython-310.pyc
+src/routes/__pycache__/auth.cpython-310.pyc
+src/routes/__pycache__/events.cpython-310.pyc
+src/routes/__pycache__/initial.cpython-310.pyc
+src/routes/__pycache__/library.cpython-310.pyc
+src/routes/__pycache__/materials.cpython-310.pyc
+src/routes/__pycache__/quizzpp.cpython-310.pyc
+src/routes/__pycache__/routes.cpython-310.pyc
+src/routes/__pycache__/secretary.cpython-310.pyc
+src/routes/__pycache__/setup.cpython-310.pyc
+src/routes/__pycache__/studying.cpython-310.pyc
