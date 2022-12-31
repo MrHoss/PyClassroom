@@ -1,0 +1,17 @@
+{% extends 'components/navmenus/lateralmenu.jinja' %}
+{% block content %}
+
+<div class="TitleHeader">
+    <h1 class="Title">Alunos</h1>
+</div>
+<div class="Paper">
+{% for role in students %}
+
+
+        <div class="listItem">
+            <div style="width:50%"><h6 class="listTitle">{{role.Users.name}}</h6><div><h6>{{role.Users.email}}</h6></div></div>
+            <div style="display:flex;flex-direction:column;justify-content:right;width:50%;align-items:end;"><h6 >Registrado em</h6><h6 class="listTitle">{{role.Users.createdAt}}</h6></div>
+        </div>
+{% endfor %}
+</div>
+{% endblock %}

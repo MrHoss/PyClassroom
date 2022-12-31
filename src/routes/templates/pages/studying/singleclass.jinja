@@ -1,0 +1,15 @@
+{% extends 'components/navmenus/lateralmenu.jinja' %}
+{% block content %}
+
+<div class="TitleHeader">
+    <h1 class="Title">{{classe.name}}</h1>
+</div>
+<div class="Paper">
+<div class="descriptionContainer">
+    <p>{{classe.description}}</p>
+</div>
+<div class="materialContainer">
+    <p>{{classe.content}}</p>
+</div>
+</div>
+{% endblock %}

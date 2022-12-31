@@ -1,14 +1,31 @@
-{% extends 'components/headers/head.jinja' %}
+{% extends 'components/navmenus/lateralmenu.jinja' %}
 {% block not_logged %}
+<div class="sideImage">
 <div class="centerContainer">
+<div class="Paper">
+    <h3>Login</h3>
   <form class="AuthForm" action="" method="post">
-    <h1>Login</h1>
-    <input class="TextField" name="email" type="email" placeholder="Email" required>
-    <input class="TextField" name="password" type="password" placeholder="Password" required>
+    <div class="TextField">
+      <input name="email" id='email' type="email" placeholder="email@exemplo.com" maxlength="150" required>
+      <label for="email">Email</label>
+    </div>
+    <div class="TextField">
+      <input name="password" id='password' type="password" placeholder="**********" maxlength="150" required>
+      <label for="password">Senha</label>
+    </div>
+
     <button class="WideBtn" type="submit">Login</button>
     <a href="/register">Registre-se</a>
 
   </form>
+  </div>
+</div>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="centerContainer">
+  <h1>Você já está logado!</h1>
 </div>
 {% endblock %}
 

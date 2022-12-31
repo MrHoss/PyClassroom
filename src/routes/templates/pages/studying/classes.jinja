@@ -1,0 +1,34 @@
+{% extends 'components/navmenus/lateralmenu.jinja' %}
+{% block content %}
+<div class="TitleHeader">
+    <h1 class="Title">{{title}}</h1>
+</div>
+<div class="Paper">
+{% if not error %}
+<div class="accordion">
+    {% for class in classes %}
+  <div class="accordionItem">
+    <h3><i class="material-icons">expand_more</i>  {{class[0].name}}</h3>
+    
+    <div class="accordionContent">
+    <hr>
+
+      <div>
+        {{class[0].description}}
+      </div>
+      <div>
+      <button class="navBtn slimBtn" value="studying/{{class[1].tagName}}/{{class[0].id}}">Acessar</button>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="centerContainer">
+  <h2>Nenhum conteúdo disponível</h2>
+</div>
+{% endif %}
+</div>
+<script src="{{ url_for('static',filename='js/effects/accordion.js') }}" defer></script>
+
+{% endblock %}

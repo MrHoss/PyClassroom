@@ -12,15 +12,13 @@
     <div id="ProfileInfo">
         <img class="profilePic" src="https://pub-static.fotor.com/assets/projects/pages/d5bdd0513a0740a8a38752dbc32586d0/fotor-03d1a91a0cec4542927f53c87e0599f6.jpg" alt="Foto de perfil">
         <h3>{{ current_user.name }}</h3>
-        {% if current_user.role %}
-        <h6 id="idNumber">{{current_user.role}}</h6>
-        {% else %}
-        <h6 id="idNumber">err: no_role</h6>
-        {% endif %}
+        {% for role in current_user.roles %}
+        <h6 id="idNumber">{{role.name}}</h6>
+        {% endfor %}
     </div>
 
     <ul class="menu-list">
-        {% if role == "student" %}
+        {% if 'Estudante' in current_user.roles %}
         <button value="studying" class="navBtn lateralItemCard">
             <i class="navIcon material-icons">
                 computer
@@ -35,18 +33,19 @@
             <h3>Cursos</h3>
         </button>
 
-        <button value="manual" class="navBtn lateralItemCard">
+        <!--<button value="manual" class="navBtn lateralItemCard">
             <i class="navIcon material-icons">
                 accessibility_new
             </i>
             <h3>Manual do Aluno</h3>
         </button>
+
         <button value="instructions" class="navBtn lateralItemCard">
             <i class="navIcon material-icons">
                 info
             </i>
             <h3>Como Estudar</h3>
-        </button>
+        </button>-->
         
         <button value="performance" class="navBtn lateralItemCard">
             <i class="navIcon material-icons">
@@ -57,9 +56,9 @@
         {% endif %}
 
 
-        {% if role == "tutor" %}
+        {% if 'Professor' in current_user.roles %}
 
-        <button value="material" class="navBtn lateralItemCard">
+        <button value="materials" class="navBtn lateralItemCard">
             <i class="navIcon material-icons">
                 computer
             </i>
@@ -98,7 +97,13 @@
             <h3>Avisos</h3>
         </button>
 
-        {% if role == "admin" %}
+        {% if 'Admin' in current_user.roles %}
+        <button value="dashboard" class="navBtn lateralItemCard">
+            <i class="navIcon material-icons">
+                dashboard
+                </i>
+            <h3>Dashboard</h3>
+        </button>
         <button value="settings" class="navBtn lateralItemCard">
             <i class="navIcon material-icons">
                 settings

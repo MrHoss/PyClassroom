@@ -1,0 +1,61 @@
+{% extends 'components/navmenus/lateralmenu.jinja' %}
+{% block content %}
+
+<div class="TitleHeader">
+    <h1 class="Title">Material</h1>
+</div>
+<div class="Paper">
+    <form class="CadForm" action="" method="post" enctype="multipart/form-data">
+    <h3>Adicionar Material</h3>
+    <div class="TextField">
+      <input name="title" id='title' type="title" placeholder="Titulo do material" maxlength="150" required>
+      <label for="title">Título</label>
+    </div>
+    <div class="TextField" style="width:100%;">
+      <select name='disciplines' id='disciplines' required>
+      <option></option>
+      {% for discipline in disciplines %}
+      
+        <option value={{discipline.id}}>{{discipline.name}}</option>
+      {%endfor%}
+      </select>
+      <label for="disciplines">Disciplinas</label>
+    </div>
+    <div class="TextField">
+      <input name="video" id='video' type="file" placeholder="Titulo do material" accept="video/*"  maxlength="204800000">
+      <label for="video">Video</label>
+    </div>
+    <div class="TextField">
+      <textarea name="description" id='description'  maxlength="150" required placeholder="Descrição do material"></textarea>
+      <label for="description">Descrição</label>
+    </div>
+    <input type="hidden" name="content" value="">
+    <div class="wysiwygEditor">
+      <div class="wysiwygEditorToolbar">
+        <button class='slimBtn' type='button' onclick="bold()"><i class="material-icons">format_bold</i></button>
+        <button class='slimBtn' type='button' onclick="italic()"><i class="material-icons">format_italic</i></button>
+        <button class='slimBtn' type='button' onclick="underline()"><i class="material-icons">format_underlined</i></button>
+        <button class='slimBtn' type='button' onclick="link()"><i class="material-icons">link</i></button>
+        <button class='slimBtn' type='button' onclick="cut()"><i class="material-icons">content_cut</i></button>
+        <button class='slimBtn' type='button' onclick="copy()"><i class="material-icons">content_copy</i></button>
+        <input class="tool-items fa fa-file-image-o" type="file" accept="image/*" id="file" style="display: none;" onchange="getImage()">
+        <label style='padding-top:24px' for="file" class='slimBtn'><i class="material-icons">add_photo_alternate</i></label>
+        <button class='slimBtn' type='button' onclick="undo()"><i class="material-icons">undo</i></button>
+        <button class='slimBtn' type='button' onclick="redo()"><i class="material-icons">redo</i></button>
+        <button class='slimBtn' type='button' onclick="changeColor()"><i class="material-icons">format_color_fill</i></button>
+        <button class='slimBtn' type='button' onclick="strikeThrough()"><i class="material-icons">strikethrough_s</i></button>
+        <button class='slimBtn' type='button' onclick="Delete()"><i class="material-icons">delete</i></button>
+        <button class='slimBtn' type='button' onclick="justifyCenter()"><i class="material-icons">format_align_center</i></button>
+        <button class='slimBtn' type='button' onclick="justifyLeft()"><i class="material-icons">format_align_left</i></button>
+        <button class='slimBtn' type='button' onclick="justifyRight()"><i class="material-icons">format_align_right</i></button>
+        <button class='slimBtn' type='button' onclick="justifyFull()"><i class="material-icons">format_align_justify</i></button>
+        <button class='slimBtn' type='button' onclick="insertOrderedList()"><i class="material-icons">format_list_numbered</i></button>
+
+      </div>
+      <div style='min-height:100px;' placeholder="Conteúdo" contenteditable id='editor' class="editor" required></div>
+    </div>
+    <button class="slimBtn" type="submit" onclick="getWYSIWYG()">Adicionar</button>
+  </form>
+</div>
+<script src="{{ url_for('static',filename='js/wysiwyg.js') }}" defer></script>
+{% endblock %}

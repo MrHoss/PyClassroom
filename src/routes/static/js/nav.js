@@ -11,7 +11,7 @@ navButtons.forEach(button => {button.addEventListener("click", function () {
     if(button.value){
         url = `/${button.value}`;
     }
-    url = url.replace("%",'/')
+    url = url.normalize('NFD').replace("%",'/').toLowerCase()
     console.log(url)
     window.location.assign(url);
     })

@@ -1,0 +1,18 @@
+{% extends 'components/navmenus/lateralmenu.jinja' %}
+{% block content %}
+
+<div class="TitleHeader">
+    <h1 class="Title">Material</h1>
+</div>
+<div class="Paper">
+    <button value="add-material" class="WideBtn navBtn">Adicionar Material</button>
+    {% for material, discipline in Materials: %}
+        <div class="listItem">
+            <div style="width:50%"><h6 class="listTitle">{{material.name}}</h6><div><button class="navBtn slimBtn" value="materials/{{material.id}}">Acessar</button></div></div>
+            <div style="display:flex;justify-content:right;width:50%;align-items:center;"><progress style="right:0;"value= {{material.id}} max="100"></progress></div>
+        </div>
+    {% endfor %}
+    
+
+</div>
+{% endblock %}

@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&display=swap');
 /* GENERAL AND DEFAULTS CONFIGURATION*/
 *{
     margin: 0;
     padding: 0;
     box-shadow: rgba(3, 102, 214, 0.0) 0px 0px 0px 3px;
-    font-family: 'Gladly Accept', sans-serif;
+    font-family: 'Ubuntu', 'Roboto', Tahoma, sans-serif;
     text-decoration: none;
     transition: background-color 0.3s ease-in-out;
 }
@@ -40,12 +41,13 @@
     --secondary-text-color: #3b3b3b;
     --hover-menu-color: #e5e5e5;
     --border-default-color: #e5e5e5;
-    --paper-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    --paper-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
     --default-menushadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 body{
     display: flex;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
 }
 hr{
@@ -261,48 +263,123 @@ hr{
 /* CONTENT CONFIGURATION*/
 
 .AuthForm {
-    width: 300px;
+    width: 500px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
-/*input/textfields/textarea*/
-.TextField{
+/*input/textfields/textarea/select*/
+.TextField {
+    display: flex;
+    flex-flow: column-reverse;
+}
+.TextField label, .TextField input, .TextField textarea, .TextField select {
+    transition: all 0.2s;
+    touch-action: manipulation;
+  }
+  
+.TextField  input, .TextField textarea, .TextField select{
     width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
+    min-height: 40px;
     border: 1px solid var(--border-default-color);
-    padding: 0 10px;
+    padding: 25px 10px 10px 10px;
     font-size: 16px;
     border-radius: 8px;
-}
+    background-color: var(--background-color);
+    -webkit-appearance: none;
+  }
+  
+.TextField  input:focus, .TextField textarea:focus, .TextField select:focus{
+    outline:3px solid var(--item-background-hover);
+  }
+  
+.TextField  label {
+    padding: 5px;
+    letter-spacing: 0.05em;
+  }
+  /**
+  * Translate down and scale the label up to cover the placeholder,
+  * when following an input (with placeholder-shown support).
+  * Also make sure the label is only on one row, at max 2/3rds of the
+  * field—to make sure it scales properly and doesn't wrap.
+  */
+  .TextField  input:placeholder-shown + label,.TextField textarea:placeholder-shown + label, .TextField select:placeholder-shown,.TextField label {
+    cursor: text;
+    font-size: 1rem;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0.9rem, 2.60rem) scale(1);
+  }
+  /**
+  * By default, the placeholder should be transparent. Also, it should 
+  * inherit the transition.
+  */
+  .TextField ::-webkit-input-placeholder{
+    opacity: 0;
+    transition: inherit;
+  }
+  /**
+  * Show the placeholder when the input is focused.
+  */
+  .TextField  input:focus::-webkit-input-placeholder, .TextField  textarea:focus::-webkit-input-placeholder, .TextField select:focus::-webkit-input-placeholder  {
+    opacity: 1;
+  }
+  /**
+  * When the element is focused, remove the label transform.
+  * Also, do this when the placeholder is _not_ shown, i.e. when 
+  * there's something in the input at all.
+  */
+  .TextField input:focus + label, .TextField  input:not(:placeholder-shown) + label,
+  .TextField textarea:focus + label ,.TextField textarea:not(:placeholder-shown)+label,
+  .TextField select:focus +label,.TextField select:not(:placeholder-shown)+ label,.TextField  label{
+    font-size: 0.8rem;
+    color: var(--secondary-text-color);
+    transform: translate(0.5rem, 1.7rem) scale(1);
+  }
 .searchFields{
     border-radius: 8px;
     border: 1px solid var(--border-default-color);
     padding: 5px;
     font-size: 1rem;
 }
+.wysiwygEditor{
+    border: 1px solid var(--border-default-color);
+    padding: 2px;
+    background-color: var(--paper-background-color);
+    border-radius: 8px;
+    margin: 25px 20px 0 0;
+}
+.wysiwygEditor #editor{
+    border: 1px solid var(--border-default-color);
+    border-radius: 8px;
+    margin: 5px;
+}
+.wysiwygEditor #editor:focus{
+    outline:3px solid var(--item-background-hover);
+
+}
 /*buttons*/
-.WideBtn{
+.slimBtn,.WideBtn{
     background-color: var(--item-background);
     color:var(--title-text-color);
-    padding: 10px;
+    padding: 13px;
+    font-size: 0.9rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    margin: 10px 0;
     border: 0;
-    border-radius: 8px;
-    width: 100%;
+    border-radius: 5px;
     cursor: pointer;
+    text-transform: uppercase;
+    
+
 }
-.WideBtn:hover{
+.WideBtn:hover, .slimBtn:hover{
     background-color: var(--item-background-hover);
 }
-.slimBtn{
-    background-color: var(--item-background);
-    color:var(--title-text-color);
-    padding: 10px;
-    border: 0;
-    border-radius: 8px;
-}
-.slimBtn:hover{
-    background-color: var(--item-background-hover);
+.WideBtn{
+    width: 100%;
 }
 /*texts*/
 .TitleHeader{
@@ -316,16 +393,30 @@ hr{
     font-size: 1rem;
     padding: 4px;
 }
+/* select */
+
 /*containers*/
 .Paper{
     background-color: var(--paper-background-color);
-    padding: 10px;
+    padding: 20px;
     margin:5px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid var(--border-default-color);
     box-shadow: var(--paper-shadow);
     max-height: calc(100vh - 150px);
     overflow-y: scroll; 
+}
+.descriptionContainer{
+    background-color: var(--border-default-color);
+    padding: 10px;
+    border-radius: 8px;
+}
+.materialContainer{
+    padding: 30px;
+    border: 1px solid var(--border-default-color);
+    margin: 10px 0;
+    border-radius: 8px;
+    min-height: 70vh;
 }
 .bodyContainer{
     width: 100%;
@@ -337,6 +428,7 @@ hr{
 }
 .centerContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -351,6 +443,15 @@ hr{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+/*Images */
+.sideImage{
+    background-image: url('/static/assets/student-ga7e9e95da_1920.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
 }
 /*lists*/
 .listItem{
